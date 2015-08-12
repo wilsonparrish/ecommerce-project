@@ -1,0 +1,9 @@
+html, body {
+	box-sizing: border-box;
+	font-family: Comic Sans MS;
+}
+
+.productThumb {
+	border: 1px solid black;
+	margin: 20px;
+}
