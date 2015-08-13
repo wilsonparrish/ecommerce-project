@@ -1,18 +1,12 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
-var anonSchema = new Schema({
-	moniker: { type: String, minlength: 8, required: true },
-	hair_style: { 
-		type: String, 
-		enum: [
-			"on fleek", 
-			"busy bee",
-			"SOS"
-		] 
-	}
-	facial_hair: { type: boolean, default: false }
-	number_of_eyes: { type: Number, max: 3 }
+var ticketSchema = new Schema({
+	raffle_item: { type: String, required: true },
+	description: { type: String, maxlength: 200 },
+	cost: { type: Number, min: 1 },
+	donor: { type: String },
+	image: { type: String }
 })
 
-module.export = mongoose.model("", anonSchema);
+mongoose.model("Ticket", ticketSchema);
